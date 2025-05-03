@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>SmartSpend - Manage Your Money Smarter</title>
+ <style>
+ /* Simple, Clean Styles */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Arial', sans-serif;
+ }
+
+ body {
+ background-color: #f5f7fa;
+ color: #333;
+ line-height: 1.6;
+ }
+
+ .container {
+ width: 90%;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+
+ /* Header */
+ header {
+   position: sticky;
+  top: 0;
+  z-index: 1000;
+ background-color: #2c3e50;
+ padding: 20px 0;
+ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+ }
+
+ nav {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+
+ .logo {
+ color: white;
+ font-size: 1.8rem;
+ font-weight: bold;
+ }
+
+ .logo span {
+ color: #3498db;
+ }
+ 
+ .tagline {
+  font-size: 1.02rem;
+  font-weight: oswald;
+  color: #bdc3c7; /* Light gray color for the tagline */
+  margin-top: 0;
+ }
+ .nav-links {
+ display: flex;
+ list-style: none;
+ }
+
+ .nav-links li {
+ margin-left: 20px;
+ }
+
+ .nav-links a {
+ color: white;
+ text-decoration: none;
+ padding: 5px 10px;
+ }
+
+ .nav-links a:hover {
+ color: #3498db;
+ }
+
+ .btn {
+ background-color: #3498db;
+ color: white;
+ padding: 10px 20px;
+ border-radius: 5px;
+ text-decoration: none;
+ font-weight: bold;
+ border: none;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+ }
+
+ .btn:hover {
+ background-color: #2980b9;
+ }
+
+ /* Hero Section */
+ .hero {
+ background: linear-gradient(to right, #2c3e50, #3498db);
+ color: white;
+ padding: 80px 0;
+ text-align: center;
+ }
+
+ .hero h1 {
+ font-size: 2.5rem;
+ margin-bottom: 20px;
+ }
+
+ .hero p {
+ font-size: 1.2rem;
+ margin-bottom: 30px;
+ max-width: 700px;
+ margin-left: auto;
+ margin-right: auto;
+ }
+
+ /* Features */
+ .features {
+ padding: 60px 0;
+ background-color: white;
+ }
+
+ .section-title {
+ text-align: center;
+ font-size: 2rem;
+ margin-bottom: 40px;
+ color: #2c3e50;
+ }
+
+ .features-container {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 30px;
+ }
+
+ .feature-box {
+ flex: 1;
+ min-width: 250px;
+ max-width: 350px;
+ padding: 30px;
+ background-color: #f9f9f9;
+ border-radius: 10px;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+ text-align: center;
+ transition: transform 0.3s ease;
+ }
+
+ .feature-box:hover {
+ transform: translateY(-10px);
+ }
+
+ .feature-icon {
+ font-size: 2.5rem;
+ color: #3498db;
+ margin-bottom: 20px;
+ }
+
+ .feature-box h3 {
+ margin-bottom: 15px;
+ color: #2c3e50;
+ }
+
+ /* How It Works */
+ .how-it-works {
+ padding: 60px 0;
+ background-color: #f5f7fa;
+ }
+
+ .steps {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 20px;
+ }
+
+ .step {
+ display: flex;
+ align-items: flex-start;
+ background-color: white;
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+ max-width: 500px;
+ }
+
+ .step-number {
+ background-color: #3498db;
+ color: white;
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: bold;
+ margin-right: 20px;
+ flex-shrink: 0;
+ }
+
+ /* Testimonials */
+ .testimonials {
+ padding: 60px 0;
+ background-color: white;
+ }
+
+ .testimonial {
+ max-width: 800px;
+ margin: 0 auto 30px;
+ text-align: center;
+ padding: 30px;
+ background-color: #f9f9f9;
+ border-radius: 10px;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+ }
+
+ .testimonial p {
+ font-style: italic;
+ margin-bottom: 20px;
+ font-size: 1.1rem;
+ }
+
+ .testimonial-author {
+ font-weight: bold;
+ color: #2c3e50;
+ }
+
+ /* CTA */
+ .cta {
+ background-color: #3498db;
+ color: white;
+ padding: 60px 0;
+ text-align: center;
+ }
+
+ .cta h2 {
+ margin-bottom: 20px;
+ }
+
+ .cta p {
+ margin-bottom: 30px;
+ max-width: 700px;
+ margin-left: auto;
+ margin-right: auto;
+ }
+
+ .cta .btn {
+ background-color: white;
+ color: #3498db;
+ font-size: 1.1rem;
+ padding: 12px 30px;
+ }
+
+ .cta .btn:hover {
+ background-color: #f5f7fa;
+ }
+
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+ .nav-links {
+ display: none;
+ }
+
+ .features-container {
+ flex-direction: column;
+ align-items: center;
+ }
+
+ .hero h1 {
+ font-size: 2rem;
+ }
+
+ .section-title {
+ font-size: 1.8rem;
+ }
+ }
+ </style>
+</head>
+<body>
+ <!-- Header -->
+ <header>
+ <div class="container">
+ <nav>
+   <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+     
+     
+     <a href="https://imgbb.com/"><img src="https://i.ibb.co/9mdSCgBx/logo678.png" alt="logo678" style="height: 70px; width: auto; margin-top: 20px;" border="0"></a>
+ <div>
+    <div style="color: white; font-size: 1.8rem; font-weight: bold;">Smart<span style="color: #3498db;">Spend</span></div>
+    <div class="tagline">Smart Tracking for Smart Savings</div>
+  </div>
+</div>
+ <ul class="nav-links">
+ <li><a href="index.html">Home</a></li>  
+ <li><a href="aboutus.html">About Us</a></li>
+ <li><a href="#features">Features</a></li>
+ <li><a href="#testimonials">Testimonials</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
+
+
+ <!-- Hero Section -->
+<section class="hero" style="background: radial-gradient(circle at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 30%, rgba(0, 0, 0, 0.45) 100%), url('https://i.ibb.co/LdLDQtk1/ss-image.webp') no-repeat right center; background-size: cover; padding: 60px 40px;">
+  <div class="container" style="max-width: 600px; color: #333;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Take Control of Your Finances</h1>
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">
+      SmartSpend helps you track expenses, set budgets, and achieve your financial goals with personalized insights.
+    </p>
+    <a href="user-details.html" class="btn" style="padding: 12px 24px; background-color: #007bff; color: #fff; border-radius: 5px; text-decoration: none;">
+      Start Now - It's Free!
+    </a>
+  </div>
+</section>
+
+
+
+ <!-- Features -->
+ <section class="features" id="features">
+ <div class="container">
+ <h2 class="section-title">Smart Features for Your Money</h2>
+ <div class="features-container">
+ <div class="feature-box">
+ <div class="feature-icon">💰</div>
+ <h3>Track Your Income</h3>
+ <p>Monitor all your income sources in one place and understand your earning patterns.</p>
+ </div>
+ <div class="feature-box">
+ <div class="feature-icon">📊</div>
+ <h3>Manage Expenses</h3>
+ <p>Categorize and track spending to identify areas where you can save more money.</p>
+ </div>
+ <div class="feature-box">
+ <div class="feature-icon">🎯</div>
+ <h3>Set Financial Goals</h3>
+ <p>Create personalized savings goals and track your progress toward achieving them.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- How It Works -->
+ <section class="how-it-works" id="how-it-works">
+ <div class="container">
+ <h2 class="section-title">How SmartSpend Works</h2>
+ <div class="steps">
+ <div class="step">
+ <div class="step-number">1</div>
+ <div>
+ <h3>Enter Your Financial Details</h3>
+ <p>Add your income sources, regular expenses, and financial goals to get started.</p>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-number">2</div>
+ <div>
+ <h3>Get Personalized Analysis</h3>
+ <p>Our system categorizes your spending and provides visual breakdowns of your finances.</p>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-number">3</div>
+ <div>
+ <h3>Improve Your Financial Health</h3>
+ <p>Receive actionable recommendations to save more and reach your financial goals faster.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Testimonials -->
+ <section class="testimonials" id="testimonials">
+ <div class="container">
+ <h2 class="section-title">What Our Users Say</h2>
+ <div class="testimonial">
+ <p>"SmartSpend's clean and simple interface makes it easy to track my finances. I love how I can see all my expenses and savings in one place—it keeps me motivated to stay on track."</p>
+ <div class="testimonial-author">- Sarah Johnson</div>
+ </div>
+ <div class="testimonial">
+ <p>""The platform makes budgeting straightforward. The visual insights are especially helpful in identifying areas where I can reduce unnecessary expenses.""</p>
+ <div class="testimonial-author">- Michael Chen</div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Call to Action -->
+ <section class="cta">
+ <div class="container">
+ <h2>Ready to Take Control of Your Money?</h2>
+ <p>Join thousands of users who have improved their financial health with SmartSpend.</p>
+ <a href="user-details.html" class="btn">Get Started Today</a>
+ </div>
+ </section>
+</body>
+</html>
