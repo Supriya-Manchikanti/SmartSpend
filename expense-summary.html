@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Summary</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="header-styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .summary {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .section {
+            background: #eef2f3;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .card {
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            padding: 15px;
+            border-radius: 10px;
+            width: 45%;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 18px;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .card i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .emoji {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .highlight {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .button:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<header>
+    <div class="header-container"> <!-- Use a different class here -->
+        <nav>
+            <div class="logo">Smart<span>Spend</span>
+                <div class="tagline">Smart Tracking for Smart Savings</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>  
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <h1>Financial Summary</h1>
+
+        <!-- Income Section -->
+        <div class="section">
+            <h2>Income</h2>
+            <div class="cards">
+                <div class="card">
+                    <p class="emoji">💰</p>
+                    <p><strong>Total Income:</strong> <span id="totalIncome" class="highlight">₹0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expenses Section -->
+        <div class="section">
+            <h2>Expenses</h2>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-home"></i>
+                    <p><strong>Fixed Expenses:</strong> <span id="totalFixedExpenses" class="highlight">₹0</span></p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-random"></i>
+                    <p><strong>Variable Expenses:</strong> <span id="totalVariableExpenses" class="highlight">₹0</span></p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-credit-card"></i>
+                    <p><strong>Debt Repayment:</strong> <span id="totalDebtRepayment" class="highlight">₹0</span></p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <p><strong>Upcoming Expenses:</strong> <span id="totalUpcomingExpenses" class="highlight">₹0</span></p>
+                </div>
+                <div class="card">
+                    <p class="emoji">️💳</p>
+                    <p><strong>Total Expenses:</strong> <span id="totalExpenses" class="highlight">₹0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goals Section -->
+        <div class="section">
+            <h2>Goals</h2>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-bullseye"></i>
+                    <p><strong>Savings Goal:</strong> <span id="savingsGoal" class="highlight">₹0</span></p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <p><strong>Investment Goal:</strong> <span id="investmentGoal" class="highlight">₹0</span></p>
+                </div>
+                <div class="card">
+                    <p class="emoji"> 💸</p>
+                    <p><strong>Total Savings:</strong> <span id="totalSavings" class="highlight">₹0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <p id="savingsStatus"></p>
+
+        <!-- Buttons to Modify Details and Visualize Spending -->
+        <div class="button-container">
+            <a href="user-details.html" class="button">Modify Details</a>
+            <a href="visualization.html" class="button">Visualize Your Spending</a>
+        </div>
+      </div>
+    </body>
+  </html>
