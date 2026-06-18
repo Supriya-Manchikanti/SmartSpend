@@ -15,7 +15,6 @@ SmartSpend is a web-based application developed using **HTML, CSS, and JavaScrip
 
 ## 🔮 Future Enhancements
 - 🔐 **API-based authentication** for secure login.
-- 🗄 **Database integration** to store user data.
 - 📊 **Historical data comparison** with improved analytics.
 
 ## 🎯 How to Use
